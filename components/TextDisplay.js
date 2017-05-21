@@ -5,10 +5,17 @@ class TextDisplay extends Component {
     super(props, context)
   }
 
+  handleClick () {
+    this.props.deleteLastLetter()
+  }
+
   render () {
     return (
       <div>
-        I'm displaying text: {this.props.text}
+        <button onClick={this.handleClick.bind(this)} >
+          Delete last letter
+        </button>
+        <div>I'm displaying text: {this.props.text}</div>
       </div>
     )
   }
